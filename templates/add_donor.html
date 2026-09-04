@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0" style="border-top: 5px solid #667eea;">
+            <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h3 class="m-0 text-center"><i class="fas fa-user-plus"></i> Register New Blood Donor</h3>
+            </div>
+            <div class="card-body p-5">
+                <form method="POST" novalidate>
+                    <div class="mb-4">
+                        <label for="name" class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Enter donor's full name" required style="border-radius: 10px;" autocomplete="off">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="age" class="form-label"><i class="fas fa-birthday-cake"></i> Age</label>
+                                <input type="number" class="form-control form-control-lg" id="age" name="age" placeholder="18-65" min="18" max="65" required style="border-radius: 10px;" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="blood_group" class="form-label"><i class="fas fa-droplet"></i> Blood Group</label>
+                                <select class="form-select form-control-lg" id="blood_group" name="blood_group" required style="border-radius: 10px;">
+                                    <option value="">Select Blood Group</option>
+                                    <option value="O+">O+ (Universal Donor)</option>
+                                    <option value="O-">O- (Negative)</option>
+                                    <option value="A+">A+ (Positive)</option>
+                                    <option value="A-">A- (Negative)</option>
+                                    <option value="B+">B+ (Positive)</option>
+                                    <option value="B-">B- (Negative)</option>
+                                    <option value="AB+">AB+ (Positive)</option>
+                                    <option value="AB-">AB- (Negative)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="phone" class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="Enter phone number" required style="border-radius: 10px;" autocomplete="off">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Enter email address" required style="border-radius: 10px;" autocomplete="off">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="city" class="form-label"><i class="fas fa-map-marker-alt"></i> City</label>
+                        <input type="text" class="form-control form-control-lg" id="city" name="city" placeholder="Enter city name" required style="border-radius: 10px;" autocomplete="off">
+                    </div>
+
+                    <div class="d-grid gap-3">
+                        <button type="submit" class="btn btn-lg fw-bold" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+                            <i class="fas fa-check-circle"></i> Register Donor
+                        </button>
+                        <a href="/view_donor" class="btn btn-lg" style="background: #95a5a6; color: white; border-radius: 10px; text-decoration: none;">
+                            <i class="fas fa-arrow-left"></i> Back to Donors
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
