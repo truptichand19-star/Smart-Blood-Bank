@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center" style="min-height: 70vh; display: flex; align-items: center;">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-lg border-0" style="border-top: 5px solid #667eea;">
+            <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h3 class="m-0 text-center"><i class="fas fa-sign-in-alt"></i> Administrator Login</h3>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" novalidate>
+                    <div class="mb-4">
+                        <label for="username" class="form-label"><i class="fas fa-user"></i> Username</label>
+                        <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Enter your username" required style="border-radius: 10px;">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter your password" required style="border-radius: 10px;">
+                    </div>
+                    <button type="submit" class="btn w-100 btn-lg fw-bold" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+                        <i class="fas fa-sign-in-alt"></i> Login to Dashboard
+                    </button>
+                </form>
+            </div>
+            <div class="card-footer bg-light text-center" style="border-top: 1px solid #e0e0e0;">
+                <p class="mb-0">Don't have an account? <a href="/admin_register" class="fw-bold" style="color: #667eea; text-decoration: none;">Register here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
