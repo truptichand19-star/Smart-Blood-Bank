@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in HTML</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: oklab(96.967% -0.00064 -0.0017 / 0.873);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: hsl(0, 77%, 5%);
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #083d8cb5;
+            color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+         border: 2px solid black
+
+        }
+
+        th {
+            font-size: 18px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:hover {
+            background-color: #e0e7ff;
+            cursor: pointer;
+        }
+
+        td {
+            border-bottom: 1px solid #ddd;
+            border: 2px solid black
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Table in HTML</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Trupti</td>
+                <td>Software Engineer</td>
+                <td>90,000</td>
+            </tr>
+            <tr>
+                <td>Samarth</td>
+                <td>AI Engineer</td>
+                <td>1,00,000</td>
+            </tr>
+            <tr>
+                <td>Vishranti</td>
+                <td>ML Engineer</td>
+                <td>80,000</td>
+            </tr>
+            <tr>
+                <td colspan="3">Thank You</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+</head>

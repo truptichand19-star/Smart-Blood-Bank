@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);">
+    <h1 style="color: white; margin-bottom: 1rem; font-size: 3rem; font-weight: 700;">
+        <i class="fas fa-droplet" style="color: #ffd700;"></i> Welcome to Smart Blood Bank
+    </h1>
+    <p class="lead" style="color: rgba(255,255,255,0.95); margin-top: 1rem; font-size: 1.3rem;">
+        <i class="fas fa-heart" style="color: #ff6b6b;"></i> Connecting Donors & Hospitals. Saving Lives Efficiently.
+    </p>
+</div>
+
+<!-- Action Buttons -->
+<div class="dashboard-buttons" style="margin: 3rem 0;">
+    <a href="/admin_login" class="btn-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Admin Login</span>
+    </a>
+    <a href="/admin_register" class="btn-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <i class="fas fa-user-plus"></i>
+        <span>Admin Register</span>
+    </a>
+    <a href="/search_donor" class="btn-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <i class="fas fa-search"></i>
+        <span>Search Donors</span>
+    </a>
+</div>
+
+<!-- Feature Cards -->
+<div class="row mt-5 mb-5">
+    <div class="col-md-6 mb-4">
+        <div class="card" style="border-top: 5px solid #ff6b6b;">
+            <div class="card-header" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+                <h5 class="mb-0"><i class="fas fa-heart"></i> For Donors</h5>
+            </div>
+            <div class="card-body">
+                <p style="color: #555; font-size: 1.05rem; line-height: 1.8;">
+                    Register as a lifesaving blood donor. Your generous contribution can make a significant difference in saving precious lives every single day.
+                </p>
+                <ul class="list-unstyled">
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>Quick & Easy Registration</strong></li>
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>Secure Database</strong></li>
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>User-Friendly Interface</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card" style="border-top: 5px solid #4facfe;">
+            <div class="card-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h5 class="mb-0"><i class="fas fa-hospital"></i> For Hospitals</h5>
+            </div>
+            <div class="card-body">
+                <p style="color: #555; font-size: 1.05rem; line-height: 1.8;">
+                    Find available blood donors in real-time. Request blood units directly and manage patient requirements efficiently with our smart system.
+                </p>
+                <ul class="list-unstyled">
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>Real-Time Donor Search</strong></li>
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>Quick Request Management</strong></li>
+                    <li style="margin: 0.8rem 0; padding-left: 1.5rem; position: relative;"><i class="fas fa-check text-success" style="position: absolute; left: 0;"></i> <strong>Reliable & Trusted System</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Benefits Section -->
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #43e97b;">
+            <div class="card-body">
+                <i class="fas fa-shield-alt" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <h5 class="card-title fw-bold">Secure & Safe</h5>
+                <p class="card-text" style="color: #666;">All your data is encrypted and protected with military-grade security</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #fa709a;">
+            <div class="card-body">
+                <i class="fas fa-bolt" style="font-size: 3rem; color: #fa709a; margin-bottom: 1rem;"></i>
+                <h5 class="card-title fw-bold">Fast & Efficient</h5>
+                <p class="card-text" style="color: #666;">Get instant access to available donors and manage requests in seconds</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #43e97b;">
+            <div class="card-body">
+                <i class="fas fa-handshake" style="font-size: 3rem; color: #43e97b; margin-bottom: 1rem;"></i>
+                <h5 class="card-title fw-bold">Community Driven</h5>
+                <p class="card-text" style="color: #666;">Join thousands of donors saving lives and making a real difference</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
