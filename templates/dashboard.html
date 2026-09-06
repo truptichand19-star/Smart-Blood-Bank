@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Dashboard Header -->
+<div class="text-center mb-5">
+    <div class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin: 0;">
+            <i class="fas fa-tachometer-alt"></i> Admin Dashboard
+        </h2>
+        <p class="lead" style="color: rgba(255,255,255,0.9); margin-top: 1rem;">Manage all blood bank operations with ease</p>
+    </div>
+</div>
+
+<!-- Main Action Buttons -->
+<div class="dashboard-buttons">
+    <a href="/add_donor" class="btn-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <i class="fas fa-user-plus"></i>
+        <span>Add New Donor</span>
+    </a>
+    <a href="/view_donor" class="btn-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <i class="fas fa-list"></i>
+        <span>View All Donors</span>
+    </a>
+    <a href="/search_donor" class="btn-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <i class="fas fa-search"></i>
+        <span>Search Donor</span>
+    </a>
+    <a href="/add_request" class="btn-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+        <i class="fas fa-plus-circle"></i>
+        <span>Create Request</span>
+    </a>
+    <a href="/view_request" class="btn-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+        <i class="fas fa-eye"></i>
+        <span>View Requests</span>
+    </a>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mt-5 mb-5">
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #ff6b6b; transition: all 0.3s ease;">
+            <div class="card-body py-4">
+                <div style="font-size: 3.5rem; color: #ff6b6b; margin-bottom: 1rem;">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h5 class="card-title fw-bold" style="font-size: 1.3rem;">Total Donors</h5>
+                <p class="card-text" style="color: #666; margin-bottom: 1rem;">Manage all registered donors in the system</p>
+                <a href="/view_donor" class="btn" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; border-radius: 8px; padding: 0.5rem 1.5rem; text-decoration: none;">View Donors</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #4facfe; transition: all 0.3s ease;">
+            <div class="card-body py-4">
+                <div style="font-size: 3.5rem; color: #4facfe; margin-bottom: 1rem;">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h5 class="card-title fw-bold" style="font-size: 1.3rem;">Blood Requests</h5>
+                <p class="card-text" style="color: #666; margin-bottom: 1rem;">Track and manage hospital blood requests</p>
+                <a href="/view_request" class="btn" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 8px; padding: 0.5rem 1.5rem; text-decoration: none;">View Requests</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center" style="border-top: 5px solid #43e97b; transition: all 0.3s ease;">
+            <div class="card-body py-4">
+                <div style="font-size: 3.5rem; color: #43e97b; margin-bottom: 1rem;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h5 class="card-title fw-bold" style="font-size: 1.3rem;">Secure System</h5>
+                <p class="card-text" style="color: #666; margin-bottom: 1rem;">All data is encrypted and secure</p>
+                <button class="btn" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; border-radius: 8px; padding: 0.5rem 1.5rem; border: none; cursor: pointer;" disabled>
+                    <i class="fas fa-check"></i> Protected
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h4 class="fw-bold mb-4" style="color: #333;">
+            <i class="fas fa-bolt" style="color: #fa709a;"></i> Quick Actions
+        </h4>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card" style="border-left: 5px solid #667eea;">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3" style="color: #667eea;">
+                    <i class="fas fa-user-plus"></i> Add Donor
+                </h6>
+                <p style="color: #666; margin-bottom: 1rem;">Register a new blood donor to the system quickly and securely.</p>
+                <a href="/add_donor" class="btn btn-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 6px; text-decoration: none;">
+                    <i class="fas fa-plus"></i> Add Now
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card" style="border-left: 5px solid #43e97b;">
+            <div class="card-body">
+                <h6 class="fw-bold mb-3" style="color: #43e97b;">
+                    <i class="fas fa-plus-circle"></i> Create Request
+                </h6>
+                <p style="color: #666; margin-bottom: 1rem;">Create a new blood request for hospitals in need of blood units.</p>
+                <a href="/add_request" class="btn btn-sm" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; border-radius: 6px; text-decoration: none;">
+                    <i class="fas fa-plus"></i> Create Now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
