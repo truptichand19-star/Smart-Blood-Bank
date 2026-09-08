@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header -->
+<div class="text-center mb-5">
+    <h2 class="fw-bold" style="color: #333; font-size: 2.5rem;">
+        <i class="fas fa-search" style="color: #4facfe;"></i> Search Donors by Blood Group
+    </h2>
+    <p class="text-muted" style="font-size: 1.1rem;">Find available donors instantly</p>
+</div>
+
+<!-- Search Form -->
+<div class="row justify-content-center mb-5">
+    <div class="col-md-6">
+        <div class="card border-0 shadow-lg" style="border-top: 5px solid #4facfe; border-radius: 15px;">
+            <div class="card-body p-5">
+                <form method="POST">
+                    <div class="mb-4">
+                        <label for="blood_group" class="form-label fw-bold"><i class="fas fa-droplet"></i> Select Blood Group</label>
+                        <select class="form-select form-select-lg" id="blood_group" name="blood_group" required style="border-radius: 10px; border: 2px solid #e0e0e0; padding: 0.8rem 1rem;">
+                            <option value="">Choose a blood group...</option>
+                            <option value="O+">O+ (Universal Donor)</option>
+                            <option value="O-">O- (Negative)</option>
+                            <option value="A+">A+ (Positive)</option>
+                            <option value="A-">A- (Negative)</option>
+                            <option value="B+">B+ (Positive)</option>
+                            <option value="B-">B- (Negative)</option>
+                            <option value="AB+">AB+ (Positive)</option>
+                            <option value="AB-">AB- (Negative)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn w-100 btn-lg fw-bold" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 10px;">
+                        <i class="fas fa-search"></i> Search Donors
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Section -->
+{% if donors %}
+<div class="alert shadow-sm" style="border: none; border-radius: 10px; background: linear-gradient(135deg, rgba(67, 233, 123, 0.1) 0%, rgba(56, 249, 215, 0.1) 100%); border-left: 5px solid #43e97b;">
+    <i class="fas fa-check-circle" style="color: #43e97b;"></i> Found <strong style="color: #43e97b; font-size: 1.1rem;">{{ donors|length }}</strong> donor(s) matching your search
+</div>
+
+<div class="card shadow-lg border-0" style="border-top: 5px solid #4facfe; border-radius: 15px; margin-bottom: 2rem;">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table mb-0" style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="width: 10%; padding: 1.2rem; text-align: center;"><i class="fas fa-hashtag"></i> ID</th>
+                        <th style="width: 25%; padding: 1.2rem;"><i class="fas fa-user"></i> Name</th>
+                        <th style="width: 12%; padding: 1.2rem; text-align: center;"><i class="fas fa-birthday-cake"></i> Age</th>
+                        <th style="width: 12%; padding: 1.2rem; text-align: center;"><i class="fas fa-droplet"></i> Blood</th>
+                        <th style="width: 18%; padding: 1.2rem;"><i class="fas fa-phone"></i> Phone</th>
+                        <th style="width: 23%; padding: 1.2rem;"><i class="fas fa-map-marker-alt"></i> City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in donors %}
+                    <tr style="border-bottom: 1px solid #f0f0f0;">
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span class="badge" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 0.6rem 0.9rem;">{{ d[0] }}</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem;">
+                            <strong style="color: #333;">{{ d[1] }}</strong>
+                        </td>
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span style="color: #666; font-weight: 500;">{{ d[2] }} yrs</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); padding: 0.6rem 0.9rem;">{{ d[3] }}</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem;">
+                            <a href="tel:{{ d[4] }}" style="color: #4facfe; text-decoration: none; font-weight: 500;">{{ d[4] }}</a>
+                        </td>
+                        <td style="padding: 1rem 1.2rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #43e97b; margin-right: 6px;"></i><span style="color: #666;">{{ d[5] }}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% elif request.method == 'POST' %}
+<div class="alert shadow-sm text-center" style="border: none; border-radius: 10px; background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%); border-left: 5px solid #fa709a; padding: 2rem;">
+    <i class="fas fa-search" style="font-size: 2rem; color: #fa709a; margin-bottom: 1rem;"></i>
+    <h5 style="color: #8b5000; margin-bottom: 1rem;">No Donors Found</h5>
+    <p style="color: #8b5000;">No donors found with the selected blood group. Try searching for another blood type.</p>
+</div>
+{% endif %}
+
+<div style="margin-top: 2rem;">
+    <a href="/dashboard" class="btn btn-lg" style="background: #95a5a6; color: white; border-radius: 10px; text-decoration: none;">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}
