@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header Section -->
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <div>
+        <h2 class="m-0 fw-bold" style="color: #333;">
+            <i class="fas fa-list" style="color: #ff6b6b;"></i> All Blood Requests
+        </h2>
+        <p class="text-muted m-0" style="margin-top: 0.5rem;">Manage and track blood requests</p>
+    </div>
+    <a href="/add_request" class="btn btn-lg fw-bold" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; border-radius: 10px;">
+        <i class="fas fa-plus-circle"></i> New Request
+    </a>
+</div>
+
+{% if requests %}
+<div class="card shadow-lg border-0" style="border-top: 5px solid #ff6b6b; border-radius: 15px;">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table mb-0" style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="width: 8%; padding: 1.2rem; text-align: center;"><i class="fas fa-hashtag"></i> ID</th>
+                        <th style="width: 22%; padding: 1.2rem;"><i class="fas fa-user-injured"></i> Patient</th>
+                        <th style="width: 15%; padding: 1.2rem; text-align: center;"><i class="fas fa-droplet"></i> Blood</th>
+                        <th style="width: 12%; padding: 1.2rem; text-align: center;"><i class="fas fa-vial"></i> Units</th>
+                        <th style="width: 43%; padding: 1.2rem;"><i class="fas fa-hospital"></i> Hospital</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in requests %}
+                    <tr style="border-bottom: 1px solid #f0f0f0; transition: background-color 0.3s ease;">
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); padding: 0.6rem 0.9rem; font-size: 0.9rem;">{{ r[0] }}</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem;">
+                            <strong style="color: #333;">{{ r[1] }}</strong>
+                        </td>
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); padding: 0.6rem 0.9rem; font-size: 0.9rem;">{{ r[2] }}</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem; text-align: center;">
+                            <span class="badge" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 0.6rem 0.9rem; font-size: 0.9rem; color: #333;">{{ r[3] }} units</span>
+                        </td>
+                        <td style="padding: 1rem 1.2rem;">
+                            <i class="fas fa-hospital" style="color: #ff6b6b; margin-right: 6px;"></i><span style="color: #666; font-weight: 500;">{{ r[4] }}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-info mt-4 shadow-sm" style="border: none; border-radius: 10px; background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); border-left: 5px solid #4facfe;">
+    <i class="fas fa-info-circle" style="color: #4facfe;"></i>
+    <strong>Total Requests:</strong> <span style="color: #0d47a1; font-weight: 700; font-size: 1.1rem;">{{ requests|length }}</span>
+</div>
+
+{% else %}
+<div class="alert shadow-sm text-center" style="border: none; border-radius: 10px; background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%); border-left: 5px solid #fa709a; padding: 2rem;">
+    <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #fa709a; margin-bottom: 1rem;"></i>
+    <h5 style="color: #8b5000; margin-bottom: 1rem;">No Blood Requests Found</h5>
+    <p style="color: #8b5000; margin-bottom: 1.5rem;">There are currently no blood requests in the system.</p>
+    <a href="/add_request" class="btn" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border-radius: 8px; padding: 0.7rem 2rem; text-decoration: none; font-weight: 600;">
+        <i class="fas fa-plus-circle"></i> Create First Request
+    </a>
+</div>
+{% endif %}
+
+<div style="margin-top: 2rem;">
+    <a href="/dashboard" class="btn btn-lg" style="background: #95a5a6; color: white; border-radius: 10px; text-decoration: none;">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}
+
+
+
